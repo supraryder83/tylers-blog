@@ -1,0 +1,75 @@
+name: Future 2021
+slug: future2021
+type: theme
+version: 3.10.0
+description: Grav Future Imperfect by HTML5 UP (Version 2021)
+icon: microchip
+author:
+  name: Pedro Moreno
+  email: pmoreno@pmdesign.dev
+  url:
+homepage: https://github.com/pmoreno-rodriguez/grav-theme-future2021
+demo: https://future2021.pmdesign.dev
+docs: https://github.com/pmoreno-rodriguez/grav-theme-future2021/blob/main/README.md
+keywords: future imperfect, html5up, theme, core, modern, fast, responsive, html5, css3
+bugs: https://github.com/pmoreno-rodriguez/grav-theme-future2021/issues
+license: CC-BY-3.0
+
+dependencies:
+  - { name: grav, version: ">=1.7.49.5" }
+
+compatibility:
+  grav:
+    - '1.7'
+    - '2.0'
+
+form:
+  validation: loose
+
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+        # General Tab
+        general:
+          type: tab
+          title: FUTURE.ADMIN.THEME.GENERAL
+          import@:
+            type: theme/general.yaml
+            context: blueprints://
+        # Header Tab
+        header:
+          type: tab
+          title: FUTURE.ADMIN.THEME.HEADER
+          import@:
+            type: theme/header.yaml
+            context: blueprints://
+        # Blog Tab
+        blog:
+          type: tab
+          title: FUTURE.ADMIN.THEME.BLOG_DEFAULTS
+          import@:
+            type: theme/blog.yaml
+            context: blueprints://
+        # Footer Tab
+        footer:
+          type: tab
+          title: FUTURE.ADMIN.THEME.FOOTER
+          import@:
+            type: theme/footer.yaml
+            context: blueprints://
+        # Social Tab
+        social:
+          type: tab
+          title: FUTURE.ADMIN.THEME.FOOTER_SOCIAL_ICONS
+          import@:
+            type: theme/social.yaml
+            context: blueprints://
+        # Custom Menu Tab
+        custommenu:
+          type: tab
+          title: FUTURE.ADMIN.THEME.CUSTOM_MENU_TITLE
+          import@:
+            type: theme/custommenu.yaml
+            context: blueprints://

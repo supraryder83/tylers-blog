@@ -1,0 +1,141 @@
+/* Styles for Back to Top button */
+
+#back-to-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5em;
+    height: 1.5em;
+    min-width: 1.5em;
+    min-height: 1.5em;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1.5em;
+    background: var(--floating-icon-bg, #ab1d35);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    transition: background 0.25s, box-shadow 0.2s, transform 0.2s, filter 0.25s, opacity .5s, visibility .5s;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1001;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+  }
+  #back-to-top:hover {
+    color: #fff !important;
+    background: linear-gradient(rgba(255,255,255,0.12), rgba(255,255,255,0.12)), var(--floating-icon-bg, #ab1d35);
+    box-shadow: 0 6px 20px 0 rgba(0,0,0,0.22);
+    transform: translateY(-2px) scale(1.10);
+    filter: none;
+    cursor: pointer;
+  }
+  #back-to-top:active,
+  #back-to-top:visited {
+    background: var(--floating-icon-bg, #ab1d35) !important;
+    color: #fff;
+  }
+  #back-to-top.show {
+    opacity: 0.95;
+    visibility: visible;
+  }
+  @media (max-width: 736px) {
+    #back-to-top {
+        right: 16px;
+        bottom: 16px;
+        width: 1.5em;
+        height: 1.5em;
+        min-width: 1.5em;
+        min-height: 1.5em;
+        font-size: 1.5em;
+    }
+  }
+
+/* Styles to show Font Awesome 5 Free in shortcode core notices */
+
+.sc-notice > div:before {
+    position: absolute;
+    top: 2px;
+    color: #fff;
+    font-family: 'Font Awesome 5 Free';
+    content: '\f05a';
+    left: 10px;
+}
+
+/* Styles to support svg images in search results */
+
+.search-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: top;
+  padding-bottom: 1.25em;
+  margin-bottom: 1.5em;
+}
+.search-row:last-child {
+  border: 0;
+  padding-bottom: 0;
+}
+.search-row a {
+  border: 0;
+}
+.search-image img {
+  width: 100px;
+  height: 100px;
+  overflow:hidden;
+  object-fit: cover;
+  object-position: 0% 100%;
+}
+.search-image a {
+  border-bottom: none;
+}
+@media only all and (max-width: 47.938em) {
+  .search-image img {display:none;}
+}
+.search-item {
+  flex: 1;
+  margin-left: 30px;
+  margin-bottom: 50px;
+  border-bottom: solid 1px rgba(160, 160, 160, 0.3);
+  padding-bottom: 2em;
+}
+
+/* Styles for Archives plugin */
+
+.label-circle {
+  display: inline-block;
+  border-radius: 50%;
+  height: 1.5em;
+  width: 1.5em;
+  text-align: center;
+  line-height: 1.25;
+  padding: .1rem .2rem;
+  background: #ba2e5d;color: #ffffff;
+  font-family: "Raleway", Helvetica, sans-serif;
+}
+
+.archive_date {
+  font-family: "Raleway", Helvetica, sans-serif;
+  font-size: 0.9em;
+}
+
+/* Styles for Login plugin */
+
+@media screen and (max-width: 736px) {
+  #header .main ul li.login-logout {
+    display: none; } }
+
+/* Support for Editable with ContentTools plugin */
+.ct-widget.ct-ignition {
+  z-index: 10015;
+}
+
+/* Modified styles for Notices */
+
+.notices {
+  padding: 0.2em;
+  margin: 15px 0;
+}
+
+.notices p {
+  margin: 1em;
+}

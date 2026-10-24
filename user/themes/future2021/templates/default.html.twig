@@ -1,0 +1,54 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block menu %}
+  {{ include('partials/sidebar_right.html.twig') }}
+{% endblock %}
+
+{% import 'macros/macros.html.twig' as macros %}
+
+{% block content %}
+  <article class="post">
+    <header>
+      <div class="title">
+        <h1>{{ title|e }}</h1>
+        {% if subtitle %}
+          {{ subtitle|markdown }}
+        {% endif %}
+      </div>
+    </header>
+
+    {% if show_image and image %}
+      <span class="image featured">
+        {{ image.cropZoom(img_width, img_height).loading('lazy').decoding('async').html(title, title)|raw }}
+      </span>
+    {% endif %}
+
+    {{ include('partials/page-toc-inline.html.twig') }}
+
+    {{ page.content|raw }}
+
+    {# Hierarchical subpages index if enabled and there are children #}
+    {% set max_subpage_level = header.max_subpage_level|default(3) %}
+    {% if header.page_index and page.children|length > 0 %}
+      <section class="page-index">
+        <h2>{{ 'FUTURE.DEFAULT.PAGE_INDEX_TITLE'|t }}</h2>
+        <div class="box light">
+          {{ macros.render_subpages(page, 1, max_subpage_level, '') }}
+        </div>
+      </section>
+    {% endif %}
+
+  </article>
+
+  {% if show_sidebar == false %}
+    <section id="footer" class="align-center">
+      {{ include('partials/sidebar-bits/footer.html.twig') }}
+    </section>
+  {% endif %}
+{% endblock %}
+
+{% block sidebar %}
+{% if show_sidebar == true %}
+  {{ include('partials/sidebar_left.html.twig') }}
+{% endif %}
+{% endblock %}

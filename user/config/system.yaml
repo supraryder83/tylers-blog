@@ -2,7 +2,7 @@ home:
   alias: '/home'
 
 pages:
-  theme: quark2
+  theme: future2021
 
 pwd_regex: '(?=.*\d)(?=.*[a-z]).{8,}'
 

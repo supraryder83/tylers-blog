@@ -1,0 +1,142 @@
+@use "../libs/breakpoints";
+@use "../libs/functions";
+@use "../libs/mixins";
+@use "../libs/vendor";
+
+///
+/// Future Imperfect by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Menu */
+
+	#menu {
+		@include vendor.vendor('transform', 'translateX(#{functions.size(menu)})');
+		@include vendor.vendor('transition', (
+			'transform #{functions.duration(menu)} ease',
+			'visibility #{functions.duration(menu)}'
+		));
+		-webkit-overflow-scrolling: touch;
+		background: functions.palette(bg);
+		border-left: solid 1px functions.palette(border);
+		box-shadow: none;
+		height: 100%;
+		max-width: 80%;
+		overflow-y: auto;
+		position: fixed;
+		right: 0;
+		top: 0;
+		visibility: hidden;
+		width: functions.size(menu);
+		z-index: functions.misc(z-index-base) + 2;
+
+		> * {
+			border-top: solid 1px functions.palette(border);
+			padding: functions.size(section-spacing);
+
+			> :last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		> :first-child {
+			border-top: 0;
+		}
+		> :nth-child(2) {
+			border-top: 0;
+		}
+		.close {
+			@include mixins.icon(false, solid);
+			@include vendor.vendor('transition', 'color #{functions.duration(transition)} ease-in-out');
+			border: 0;
+			color: functions.palette(fg-light);
+			cursor: pointer;
+			text-align: right;
+
+			&:before {
+				content: '\f00d';
+				display: block;
+				padding: 0.5em 1.5em;
+			}
+
+			&:hover {
+				color: inherit;
+			}
+
+			@include breakpoints.breakpoint('<=small') {
+				height: 4em;
+				line-height: 4em;
+
+				&:before {
+					padding: 0em;
+				}
+			}
+		}
+
+		.links {
+			list-style: none;
+			padding: 0;
+
+			> li {
+				border: 0;
+				border-top: dotted 1px functions.palette(border);
+				margin: 1.5em 0 0 0;
+				padding: 1.5em 0 0 0;
+
+				a {
+					display: block;
+					border-bottom: 0;
+
+					h3 {
+						@include vendor.vendor('transition', 'color #{functions.duration(transition)} ease');
+						font-size: 0.7em;
+					}
+
+					p {
+						font-family: functions.font(family-heading);
+						font-size: 0.6em;
+						font-weight: functions.font(weight-heading);
+						letter-spacing: functions.font(kerning-heading);
+						letter-spacing: functions.size(letter-spacing-alt);
+						margin-bottom: 0;
+						text-decoration: none;
+						text-transform: uppercase;
+					}
+
+					&:hover {
+						h3 {
+							color: functions.palette(accent);
+						}
+					}
+				}
+
+				&:first-child {
+					border-top: 0;
+					margin-top: 0;
+					padding-top: 0;
+				}
+			}
+		}
+
+		.sidebar-content.lang {
+			display: none;
+		}
+
+		@include breakpoints.breakpoint('<=small') {
+			.sidebar-content.lang {
+				display: block;
+			}
+		}
+
+		body.is-menu-visible & {
+			@include vendor.vendor('transform', 'translateX(0)');
+			visibility: visible;
+		}
+
+		@include breakpoints.breakpoint('<=small') {
+			> * {
+				padding: functions.size(section-spacing-small);
+			}
+		}
+	}

@@ -1,0 +1,24 @@
+@use "../libs/functions";
+
+/* Feautres */
+
+#features {
+
+        header {
+            p {
+                font-family: functions.font(family);
+                font-weight: functions.font(weight);
+                font-size: inherit;
+                letter-spacing: functions.font(no-kerning);
+                line-height: inherit;
+                margin: 1em 0;
+                text-transform: initial;
+                padding: 0 1em;
+            }
+            h3 {
+                margin-top: 0em;
+                padding: 0 1em;
+            }
+        }
+                    
+}

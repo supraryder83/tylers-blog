@@ -1,0 +1,59 @@
+
+{# MACRO TO LIST HIERARCHICAL SUBPAGES WITH LEVELS AND NUMERIC PREFIX #}
+{% macro render_subpages(page, level, max_level, prefix) %}
+  {# Only render if within allowed level #}
+  {% if level <= max_level %}
+    {% set children = page.children.visible|default(page.children) %}
+    {% if children|length > 0 %}
+      <ul class="subpage-index-list" style="padding-left: {{ (level - 1) * 15 }}px;">
+      {% for child in children %}
+        <li>
+          {{ prefix ~ loop.index }}. <a href="{{ child.url }}">{{ child.menu|e }}</a>
+          {{ _self.render_subpages(child, level + 1, max_level, prefix ~ loop.index ~ '.') }}
+        </li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endif %}
+{% endmacro %}
+
+{# MACRO FOR PAGE-TOC PLUGIN SUPPORT #}
+
+{% macro toc_loop(items) %}
+    {% import _self as toc_macros %}
+    {% for item in items %}
+        {% set class = loop.first ? 'first' : loop.last ? 'last' : null %}
+        <li {% if class %}class="{{ class }}"{% endif %}>
+            <a href="{{ item.uri }}">{{ item.label }}</a>
+            {% if item.children|length > 0 %}
+                <ul>
+                    {{ toc_macros.toc_loop(item.children) }}
+                </ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+{% endmacro %}
+
+{# MACRO FOR TOP MENU NAVIGATION #}
+
+{% macro nav_loop(page) %}
+  {% import _self as nav_macros %}
+  {% for p in page.children.visible %}
+    {% set active_page = (p.active or p.activeChild) ? 'active' : '' %}
+    {% set has_visible_children = p.children.visible.count > 0 %}
+    <li>
+      <a href="{{ p.url }}" class="{{ active_page }}">
+        {% if p.header.icon %}
+            <i class="fa fa-{{ p.header.icon }}"></i>
+        {% endif %}
+        {{ p.menu }}
+        {% if has_visible_children %}&nbsp;<i class="fa fa-angle-down"></i>{% endif %}
+      </a>
+      {% if has_visible_children %}
+      <ul>
+        {{ nav_macros.nav_loop(p) }}
+      </ul>
+      {% endif %}
+    </li>
+  {% endfor %}
+{% endmacro %}

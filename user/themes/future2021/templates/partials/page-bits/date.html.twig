@@ -1,0 +1,9 @@
+{# Date fallback order: publish_date → page.date → page.modified #}
+{% set short_format = system.pages.dateformat.short %}
+
+{% set datestamp = (page.header.publish_date)
+  ? (page.header.publish_date|date(short_format))
+  : (page.date ? page.date|date(short_format) : page.modified|date(short_format))
+%}
+
+{{ datestamp }}

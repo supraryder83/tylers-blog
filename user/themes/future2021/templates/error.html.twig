@@ -1,0 +1,30 @@
+{% extends 'partials/base.html.twig' %}
+
+{% set sidebar = theme_var('sidebar')|defined(true) %}
+
+{% block menu %}
+  {{ include('partials/sidebar_right.html.twig') }}
+{% endblock %}
+
+{% block content %}
+  <article class="post">
+    <header>
+      <div class="title">
+        <h2><span class="icon solid fa-exclamation-triangle"></span> Error {{ page.header.http_response_code }}</h2>
+        {{ page.content|raw }}
+      </div>
+    </header>
+  </article>
+
+  {% if sidebar == false %}
+    <section id="footer" class="align-center">
+      {{ include('partials/sidebar-bits/footer.html.twig') }}
+    </section>
+  {% endif %}
+{% endblock %}
+
+{% block sidebar %}
+{% if sidebar == true %}
+    {{ include('partials/sidebar_left.html.twig') }}
+{% endif %}
+{% endblock %}

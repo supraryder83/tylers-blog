@@ -1,0 +1,78 @@
+{% extends 'partials/base.html.twig' %}
+
+{% set collection = page.collection() %}
+{% set blog = page.find(page.header.blog_url|defined(theme_var('blog_page')|default('/blog'))) %}
+{% set show_breadcrumbs = page.header.show_breadcrumbs|defined(true) %}
+{% set show_pagination = page.header.show_pagination|defined(true) %}
+
+{# Set page title by taxonomy #}
+{% if uri.param('category') %}
+    {% set listing_title = 'FUTURE.BLOG.LISTING_TITLE_CATEGORY'|t ~ uri.param('category') %}
+{% elseif uri.param('tag') %}
+    {% set listing_title = 'FUTURE.BLOG.LISTING_TITLE_TAG'|t ~ uri.param('tag') %}
+{% elseif uri.param('author') %}
+    {% set listing_title = 'FUTURE.BLOG.LISTING_TITLE_AUTHOR'|t ~ uri.param('author') %}
+{% elseif uri.param('archives_month') %}
+    {% set listing_title = 'FUTURE.BLOG.LISTING_TITLE_MONTH'|t ~ uri.param('archives_month')|replace({_: ' '}) %}
+{% else %}
+    {% set listing_title = page.header.subtitle %}
+{% endif %}
+
+{% block menu %}
+  {{ include('partials/sidebar_right.html.twig') }}
+{% endblock %}
+
+{% block content %}
+<article class="heading">
+    {% if image %}
+    <span class="image featured">
+      {{ image.cropZoom(1038, 437).loading('lazy').decoding('async').html(title, title)|raw }}
+    </span>
+    {% endif %}
+    <div class="title">
+      <h1 itemprop="headline">{{ title|e }}</h1>
+      {% if listing_title %}
+        {{ listing_title|markdown }}
+      {% endif %}
+    </div>
+
+    {{ page.content|raw }}
+
+    {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
+      {{ include('partials/breadcrumbs.html.twig') }}
+    {% endif %}
+
+    {{ include('partials/page-toc-inline.html.twig') }}
+</article>
+  {% for child in collection %}
+    {% set datestamp = include('partials/page-bits/date.html.twig', {page: child}) %}
+    {% set childImage = child.media[child.header.featured_image] ?: child.media[child.header.primaryImage] ?: child.media.all|filter((v, k) => k != child.header.avatarImage and (v.type == 'image' or v.type == 'vector'))|first %}
+    {% set childTitle = child.title %}
+    {% set child_showImage = child.header.show_pageimage|defined(true) %}
+    {{ include('partials/blog_item.html.twig',
+        {blog: page,
+        page: child,
+        title: child.title,
+        subtitle: child.header.subtitle,
+        show_image: child_showImage,
+        image: childImage,
+        listing: true, truncate: true})
+    }}
+  {% endfor %}
+
+  {% if show_pagination and config.plugins.pagination.enabled and collection.params.pagination %}
+    {{ include('partials/pagination.html.twig', {base_url: page.url, pagination: collection.params.pagination}) }}
+  {% endif %}
+
+  {% if show_sidebar == false %}
+    <section id="footer" class="align-center">
+      {{ include('partials/sidebar-bits/footer.html.twig') }}
+    </section>
+  {% endif %}
+{% endblock %}
+
+{% block sidebar %}
+{% if show_sidebar == true %}
+    {{ include('partials/sidebar_left.html.twig') }}
+{% endif %}
+{% endblock %}

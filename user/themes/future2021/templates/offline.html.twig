@@ -1,0 +1,28 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+  <article class="post">
+    <header>
+      <div class="title">
+        <h1 class="logo"><a href="{{ home_url }}">{{ site.title|e }}</a></h1>
+        <h2>Error {{ page.header.http_response_code }}</h2>
+        <p>{{ page.content|raw }}</p>
+      </div>
+    </header>
+  </article>
+
+  {% if sidebar == false %}
+    <section id="footer" class="align-center">
+      {{ include('partials/sidebar-bits/footer.html.twig') }}
+    </section>
+  {% endif %}
+
+{% endblock %}
+
+{% block sidebar %}
+{% if sidebar == true %}
+    {{ include('partials/sidebar_left.html.twig') }}
+{% endif %}
+{% endblock %}

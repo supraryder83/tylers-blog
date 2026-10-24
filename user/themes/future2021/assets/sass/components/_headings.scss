@@ -1,0 +1,97 @@
+@use "../libs/breakpoints";
+@use "../libs/functions";
+@use "../libs/mixins";
+
+/* CSS for Headings */
+/* by Pedro Moreno */
+
+.heading {
+
+    @include mixins.padding(functions.size(section-spacing), functions.size(section-spacing));
+    background: functions.palette(bg);
+    border: solid 1px functions.palette(border);
+    margin: 0 0 functions.size(section-spacing-small) 0;
+    position: relative;
+
+    #breadcrumbs {
+        font-family: functions.font(family-heading);
+        font-size: 0.6em;
+        font-weight: functions.font(weight-heading);
+        letter-spacing: functions.font(kerning-heading);
+        text-transform: uppercase;
+        margin-top: -1em;
+        height: functions.size(section-spacing);
+        line-height: functions.size(section-spacing);
+        padding-inline-start: 0;
+
+        span {
+            padding: 0;
+        }
+
+        i {
+            padding: 0 1em;
+            width: 0;
+        }
+    }
+
+    .title {
+
+        h1 {
+            font-weight: functions.font(weight-heading-extrabold);
+            font-size: 2em;
+        }
+
+        h2 {
+            font-weight: functions.font(weight-heading-extrabold);
+            font-size: 1.8em;
+        }
+        p {
+            font-family: functions.font(family-heading);
+            font-size: 0.8em;
+            font-weight: functions.font(weight-bold);
+            letter-spacing: functions.font(kerning-heading);
+            line-height: 2.5;
+            margin-top: -1em;
+            text-transform: uppercase;
+        }
+    }
+    @include breakpoints.breakpoint('<=medium') {
+        border-left: 0;
+        border-right: 0;
+        left: functions.size(section-spacing) * -1;
+        width: calc(100% + (#{functions.size(section-spacing)} * 2));
+
+        #breadcrumbs {
+            margin: 0 0 functions.size(element-margin) 0;
+            padding: 0;
+            text-align: center;
+        }
+        .title {
+            flex: 0 1 auto;
+            margin: 0 0 functions.size(element-margin) 0;
+            padding: 0;
+            text-align: center;
+        }
+    }
+    @include breakpoints.breakpoint('<=small') {
+        @include mixins.padding(functions.size(section-spacing-small), functions.size(section-spacing-small));
+        left: functions.size(section-spacing-small) * -1;
+        margin: 0 0 functions.size(element-margin) 0;
+        width: calc(100% + (#{functions.size(section-spacing-small)} * 2));
+
+        .title {
+            h2 {
+                font-size: 1.1em;
+            }
+        }
+        
+    }
+
+    @include breakpoints.breakpoint('<=xsmall') {
+        > .image.featured {
+            margin-left: functions.size(section-spacing-small) * -1;
+            margin-top: calc(#{functions.size(section-spacing-small) * -1} - 1px);
+            width: calc(100% + #{functions.size(section-spacing-small) * 2});
+        }
+    }
+}

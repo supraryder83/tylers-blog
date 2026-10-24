@@ -1,0 +1,100 @@
+{% apply spaceless %}
+{% set version = (grav.theme.getBlueprint()).get('version') %}
+<!--
+  Future Imperfect by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+  Ported to Grav by Pedro Moreno <https://github.com/pmoreno-rodriguez>
+  https://github.com/pmoreno-rodriguez/grav-theme-future2021
+
+  {% if version %}
+      Grav theme version: v{{ version }}
+  {% endif %}
+-->
+
+{# Define global variables #}
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+
+{# Set site language and datestamp for pages #}
+{% set lang = grav.language.getActive ?: grav.config.site.default_lang %}
+{% set datestamp = include('partials/page-bits/date.html.twig') %}
+
+{# Define if sidebar is shown in the page #}
+{% set show_sidebar = page.header.show_sidebar|defined(true) %}
+
+{# Configuration of header and sidebar buttons #}
+{% set icon_lang = theme_var('menu_langswitcher')|defined(false) %}
+{% set icon_search = theme_var('menu_search')|defined(false) %}
+{% set icon_login = theme_var('menu_login')|defined(false) %}
+{% set logoImageHeader = theme_var('type_logo_header')|defined('text') %}
+
+{# Define if the featured image and the attributes of width and height are shown #}
+{% set show_image = page.header.show_pageimage|defined(true) %}
+{# {% set image = page.media[page.header.primaryImage] ?: page.media.all|filter((v, k) => k != page.header.avatarImage and (v.type == 'image' or v.type == 'vector'))|first %} #}
+{% set image = page.media[page.header.featured_image] ?: page.media[page.header.primaryImage] ?: page.media.all|filter((v, k) => k != page.header.avatarImage and (v.type == 'image' or v.type == 'vector'))|first %}
+{% set img_width = page.header.image_width|default(1038) %}
+{% set img_height = page.header.image_height|default(437) %}
+
+{# Set title and subtitle #}
+{% set title = page.title %}
+{% set subtitle = page.header.subtitle %}
+{% endapply %}
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+
+  <head>
+    {% block head deferred %}
+      {{ include('partials/head/favicon.html.twig') }}
+      {{ include('partials/head/seo.html.twig') }}
+    {% endblock %}
+
+    {% block stylesheets %}
+      {{ include('partials/head/stylesheets.html.twig') }}
+    {% endblock %}
+
+    {% block javascripts %}
+      {{ include('partials/head/javascripts.html.twig') }}
+    {% endblock %}
+
+    {% block assets deferred %}
+      {{ assets.css()|raw }}
+      {{ assets.js()|raw }}
+    {% endblock %}
+  </head>
+
+  <body class="{% block body_classes %}{{ page.header.body_classes }}{% endblock %} is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+      {% block header %}
+        {{ include('partials/header.html.twig') }}
+      {% endblock %}
+
+      {% block body %}
+
+        {% block menu %}{% endblock %}
+
+        {% block main %}
+          <div id="main">
+            {% block content %}{% endblock %}
+          </div>
+
+            {% block sidebar %}{% endblock %}
+
+        {% endblock %}
+
+      {% endblock %}
+
+      {{ include('partials/floating_icons.html.twig') }}
+
+      <a id="back-to-top" href="#" aria-label="{{ 'FUTURE.MISC.BACK_TO_TOP'|t }}" title="{{ 'FUTURE.MISC.BACK_TO_TOP'|t }}">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+
+      {% block bottom %}
+        {{ assets.js('bottom')|raw }}
+      {% endblock %}
+    </div>
+  </body>
+</html>

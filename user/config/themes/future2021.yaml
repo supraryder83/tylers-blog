@@ -1,0 +1,10 @@
+enabled: true
+production-mode: false
+sidebar: true
+slogan: 'CNC Machining • Fiber & CO2 Lasers • Precision Maker Lab'
+footer:
+  title: 'Tyler Ziegler Maker Lab'
+  description: 'Precision machining, high-power laser optics, CoreXY additive manufacturing, and workshop engineering in Western Manitoba.'
+  button_text: 'About Tyler'
+  button_url: '/about'
+  copyright_text: 'All rights reserved. CNC Machining, Industrial Lasers & Maker Engineering'

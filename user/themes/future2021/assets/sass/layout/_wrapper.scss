@@ -1,0 +1,42 @@
+@use "../libs/breakpoints";
+@use "../libs/functions";
+@use "../libs/vendor";
+
+///
+/// Future Imperfect by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Wrapper */
+
+	#wrapper {
+		@include vendor.vendor('display', 'flex');
+		@include vendor.vendor('flex-direction', 'row-reverse');
+		@include vendor.vendor('transition', 'opacity #{functions.duration(menu)} ease');
+		margin: 0 auto;
+		max-width: 100%;
+		opacity: 1;
+		padding: (functions.size(section-spacing) * 1.5);
+		width: 100%;
+
+		body.is-menu-visible & {
+			opacity: 0.15;
+		}
+
+		@include breakpoints.breakpoint('<=xlarge') {
+			padding: functions.size(section-spacing);
+		}
+
+		@include breakpoints.breakpoint('<=large') {
+			display: block;
+		}
+
+		@include breakpoints.breakpoint('<=small') {
+			padding: functions.size(section-spacing-small);
+		}
+
+		body.single & {
+			display: block;
+		}
+	}

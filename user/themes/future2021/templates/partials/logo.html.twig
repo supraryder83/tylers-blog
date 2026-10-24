@@ -1,0 +1,22 @@
+{% set logo = theme_var('custom_logo_mobile') ?: theme_var('custom_logo') %}
+
+{% if logo %}
+  {% set logo_file = (logo|first).name %}
+  {% set extension = logo_file|split('.')|last %}
+
+  {% if extension == 'svg' %}
+      {{ include(('@images/logo/' ~ logo_file)) }}
+  {% else %}
+      <img src="{{ url('theme://images/logo/' ~ logo_file) }}" alt="{{ site.title|e }}" class="{{ logo_class }}" />
+  {% endif %}
+{% else %}
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="{{ logo_class }}" style="display:inline-block;vertical-align:middle;">
+    <circle cx="24" cy="24" r="21" stroke="#ef4444" stroke-width="2" stroke-dasharray="4 2" opacity="0.6"/>
+    <circle cx="24" cy="24" r="14" stroke="#ffffff" stroke-width="1.5" opacity="0.8"/>
+    <circle cx="24" cy="24" r="6" fill="#ef4444"/>
+    <line x1="24" y1="2" x2="24" y2="8" stroke="#ef4444" stroke-width="2"/>
+    <line x1="24" y1="40" x2="24" y2="46" stroke="#ef4444" stroke-width="2"/>
+    <line x1="2" y1="24" x2="8" y2="24" stroke="#ef4444" stroke-width="2"/>
+    <line x1="40" y1="24" x2="46" y2="24" stroke="#ef4444" stroke-width="2"/>
+  </svg>
+{% endif %}

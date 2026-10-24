@@ -18,6 +18,9 @@
 *.log
 *.tmp
 *.bak
+user/data/grav-security-probe.*
+user/data/feed/
+user/data/notifications/
 
 # OS / Editor files
 .DS_Store

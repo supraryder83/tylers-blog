@@ -1,0 +1,43 @@
+{% extends 'partials/base.html.twig' %}
+
+{# Commented code for future improvements in modular menu #}
+
+{# {% set show_onpage_menu = header.onpage_menu == true or header.onpage_menu is null %}
+{% macro pageLinkName(text) %}
+  {{ text|lower|replace({' ':'_'}) }}
+{% endmacro %} #}
+
+{% block menu %}
+  {{ include('partials/sidebar_right.html.twig') }}
+{% endblock %}
+
+{% block content %}
+  <article class="post">
+    <header>
+      <div class="title">
+        <h1>{{ title|e }}</h1>
+        {% if subtitle %}
+          {{ subtitle|markdown }}
+        {% endif %}
+      </div>
+    </header>
+
+    {% if show_image and image %}
+    <span class="image featured">
+      {{ image.cropZoom(img_width, img_height).loading('lazy').decoding('async').html(title, title)|raw }}
+    </span>
+    {% endif %}
+
+    {{ page.content|raw }}
+
+    {% for module in page.collection() %}
+      {{ module.content|raw }}
+    {% endfor %}
+  </article>
+{% endblock %}
+
+{% block sidebar %}
+{% if show_sidebar == true %}
+    {{ include('partials/sidebar_left.html.twig') }}
+{% endif %}
+{% endblock %}

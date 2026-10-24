@@ -1,0 +1,35 @@
+{% block menu_navigation %}
+{% macro loop(page) %}
+{% for p in page.children.visible %}
+    {% set current_page = (p.active or p.activeChild) ? 'active' : '' %}
+    <li class="{{ current_page }}">
+        <a href="{{ p.url }}">
+            {% if p.header.icon %}
+                <i class="fa fa-{{ p.header.icon }}"></i>
+            {% endif %}
+            <span>{{ p.menu }}</span>
+        </a>
+        {% if p.children.visible.count > 0 %}
+            <ul class="subitem">
+                {{ _self.loop(p) }}
+            </ul>
+        {% endif %}
+    </li>
+{% endfor %}
+{% endmacro %}
+  <ul class="menulink">
+    {{ _self.loop(pages) }}
+    {% if theme_var('custommenus.enabled') %}
+      {% for mitem in theme_var('custommenu') %}
+        <li>
+          <a href="{{ mitem.url|e }}" target="{{ mitem.target }}">
+            {% if mitem.icon %}
+              <i class="fa fa-{{ mitem.icon|e('html_attr') }}"></i>
+            {% endif %}
+            <span>{{ mitem.text|e }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    {% endif %}
+  </ul>
+{% endblock %}
