@@ -1,0 +1,260 @@
+/* ==========================================================================
+   Tyler Ziegler's Blog // Clean Blog Dark & Red Accent Custom Styling
+   Minimalist, Clean, and Readable Personal Blog
+   ========================================================================== */
+
+:root {
+  --cb-bg: #090a0f;
+  --cb-bg-card: #10121a;
+  --cb-border: rgba(255, 255, 255, 0.08);
+  --cb-text-main: #f1f5f9;
+  --cb-text-muted: #94a3b8;
+  --cb-text-dim: #64748b;
+  --cb-red: #ef4444;
+  --cb-red-bright: #ff3355;
+  --cb-red-glow: 0 0 12px rgba(239, 68, 68, 0.4);
+}
+
+/* Base Body */
+body {
+  background-color: var(--cb-bg) !important;
+  color: var(--cb-text-main) !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Masthead Header */
+header.masthead {
+  background-color: #050608 !important;
+  background-image: linear-gradient(180deg, rgba(5, 6, 8, 0.85) 0%, rgba(9, 10, 15, 1) 100%) !important;
+  margin-bottom: 2.5rem !important;
+  padding-top: 8rem !important;
+  padding-bottom: 5rem !important;
+  border-bottom: 1px solid var(--cb-border);
+}
+
+header.masthead .site-heading h1,
+header.masthead .post-heading h1 {
+  font-size: 2.75rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+  color: #ffffff !important;
+  margin-bottom: 0.75rem !important;
+}
+
+header.masthead .site-heading .subheading,
+header.masthead .post-heading .subheading {
+  font-size: 1.25rem !important;
+  color: var(--cb-text-muted) !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+}
+
+header.masthead .post-heading .meta {
+  color: var(--cb-text-dim) !important;
+  font-size: 0.95rem !important;
+  margin-top: 1rem !important;
+  display: block;
+}
+
+/* Navbar */
+#mainNav {
+  background-color: rgba(9, 10, 15, 0.92) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--cb-border) !important;
+}
+
+#mainNav .navbar-brand {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 1.15rem !important;
+  letter-spacing: -0.01em !important;
+}
+
+#mainNav .navbar-brand:hover {
+  color: var(--cb-red) !important;
+}
+
+.brand-red-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--cb-red);
+  box-shadow: 0 0 10px var(--cb-red);
+  animation: pulse-dot 2.5s infinite ease-in-out;
+  display: inline-block;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 10px var(--cb-red); }
+  50% { opacity: 0.65; transform: scale(0.9); box-shadow: 0 0 4px var(--cb-red); }
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+  color: var(--cb-text-muted) !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  transition: color 0.2s ease;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link:hover {
+  color: var(--cb-red) !important;
+}
+
+/* Post Previews on Index */
+.post-preview {
+  padding: 1.5rem 0;
+  transition: transform 0.2s ease;
+}
+
+.post-preview:hover {
+  transform: translateX(4px);
+}
+
+.post-preview > a {
+  text-decoration: none !important;
+}
+
+.post-preview .post-title {
+  color: #ffffff !important;
+  font-size: 1.75rem !important;
+  font-weight: 700 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem !important;
+  letter-spacing: -0.02em !important;
+  transition: color 0.2s ease;
+}
+
+.post-preview:hover .post-title {
+  color: var(--cb-red) !important;
+}
+
+.post-preview .post-subtitle {
+  color: var(--cb-text-muted) !important;
+  font-size: 1.1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.post-preview .post-meta {
+  color: var(--cb-text-dim) !important;
+  font-size: 0.88rem !important;
+  margin: 0 !important;
+}
+
+hr {
+  border-color: var(--cb-border) !important;
+  opacity: 1 !important;
+}
+
+/* Post Article Body */
+article {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--cb-text-main);
+}
+
+article h1, article h2, article h3, article h4 {
+  color: #ffffff !important;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+article h2 {
+  font-size: 1.6rem;
+}
+
+article h3 {
+  font-size: 1.3rem;
+}
+
+article p {
+  color: #cbd5e1;
+  margin-bottom: 1.5rem;
+}
+
+article a {
+  color: var(--cb-red) !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+article a:hover {
+  color: var(--cb-red-bright) !important;
+}
+
+article ul, article ol {
+  color: #cbd5e1;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+article li {
+  margin-bottom: 0.5rem;
+}
+
+article blockquote {
+  border-left: 3px solid var(--cb-red) !important;
+  background: var(--cb-bg-card) !important;
+  padding: 1rem 1.25rem !important;
+  margin: 1.75rem 0 !important;
+  border-radius: 0 6px 6px 0;
+  color: var(--cb-text-muted) !important;
+  font-style: italic;
+}
+
+/* Code Blocks */
+pre, code {
+  font-family: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+}
+
+pre {
+  background: #11131c !important;
+  border: 1px solid var(--cb-border) !important;
+  border-left: 3px solid var(--cb-red) !important;
+  padding: 1.25rem !important;
+  border-radius: 6px !important;
+  margin: 1.5rem 0 !important;
+  overflow-x: auto;
+}
+
+pre code {
+  color: #e2e8f0 !important;
+  background: transparent !important;
+  font-size: 0.9rem !important;
+}
+
+code:not(pre code) {
+  color: #ff546d !important;
+  background: rgba(239, 68, 68, 0.08) !important;
+  padding: 0.15rem 0.35rem !important;
+  border-radius: 4px;
+}
+
+/* Footer */
+footer.border-top {
+  border-top: 1px solid var(--cb-border) !important;
+  background-color: #050608 !important;
+  padding: 3rem 0 2rem 0 !important;
+  margin-top: 4rem;
+}
+
+footer .list-inline a {
+  color: var(--cb-text-dim) !important;
+  transition: color 0.2s ease;
+}
+
+footer .list-inline a:hover {
+  color: var(--cb-red) !important;
+}
+
+footer .text-muted {
+  color: var(--cb-text-dim) !important;
+  font-size: 0.85rem !important;
+}

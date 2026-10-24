@@ -1,8 +1,8 @@
 home:
-  alias: '/home'
+  alias: '/blog'
 
 pages:
-  theme: future2021
+  theme: clean-blog
 
 pwd_regex: '(?=.*\d)(?=.*[a-z]).{8,}'
 

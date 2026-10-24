@@ -1,0 +1,7 @@
+enabled: true
+copyright: 'Copyright &copy; Tyler Ziegler 2026. Built with Grav.'
+social_icons:
+  - icon: 'fa-github'
+    url: 'https://github.com/supraryder83'
+  - icon: 'fa-envelope'
+    url: 'mailto:tyler@tylerziegler.ca'

@@ -1,21 +1,21 @@
-title: "Tyler Ziegler's Blog"
+title: "Tyler Ziegler"
 default_lang: en
 author:
   name: 'Tyler Ziegler'
   email: 'tyler@tylerziegler.ca'
-  role: 'Machinist, Laser Fabricator & Hardware Maker'
+  role: 'Maker & Tinkerer'
   location: 'Western Manitoba, Canada'
 taxonomies: [category, tag]
 metadata:
-  description: 'Build logs, CNC feeds & speeds, CO2 and fiber laser optics, custom hardware fabrication, and workshop tooling by Tyler Ziegler.'
-  keywords: 'Tyler Ziegler, CNC, CNC milling, laser cutter, fiber laser, maker, 3D printing, fabrication, machining, G-code, Voron, workshop'
+  description: "A simple personal blog by Tyler Ziegler about making things, technology, and building projects."
+  keywords: "Tyler Ziegler, personal blog, maker, building, projects"
 summary:
   enabled: true
   format: short
   size: 300
 header:
-  title: "Tyler Ziegler's Blog"
-  tagline: 'CNC Machining • Fiber & CO2 Lasers • Precision Maker Lab'
+  title: "Tyler Ziegler"
+  tagline: "Thoughts, projects, and things I'm building."
 blog:
   route: '/blog'
 social:
