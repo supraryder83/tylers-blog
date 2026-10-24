@@ -12,7 +12,7 @@ header_image: rangefinder-gear.jpg
   <img src="rangefinder-gear.jpg" alt="Vintage rangefinder camera on slate table by Tyler Ziegler">
   <div class="photo-feature-caption">
     <span>FIG 01 // Manual Rangefinder with 50mm Summilux and 120 Tri-X Film</span>
-    <span style="color: var(--photo-gold);">BENCH STUDY • OCTOBER 22, 2026</span>
+    <span style="color: var(--photo-red);">BENCH STUDY • OCTOBER 22, 2026</span>
   </div>
 </div>
 

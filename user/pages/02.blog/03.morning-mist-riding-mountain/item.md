@@ -12,7 +12,7 @@ header_image: riding-mountain-mist.jpg
   <img src="riding-mountain-mist.jpg" alt="Dawn fog over calm lake in Riding Mountain by Tyler Ziegler">
   <div class="photo-feature-caption">
     <span>FIG 01 // Autumn Dawn Mist, Clear Lake Shoreline, Riding Mountain National Park</span>
-    <span style="color: var(--photo-gold);">OCTOBER 19, 2026 • 07:08 AM</span>
+    <span style="color: var(--photo-red);">OCTOBER 19, 2026 • 07:08 AM</span>
   </div>
 </div>
 

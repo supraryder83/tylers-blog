@@ -12,7 +12,7 @@ header_image: monochrome-geometry.jpg
   <img src="monochrome-geometry.jpg" alt="Monochrome architectural study of warehouse facade by Tyler Ziegler">
   <div class="photo-feature-caption">
     <span>FIG 01 // Geometric Shadows on Century Brick, Pacific Avenue Warehouse District</span>
-    <span style="color: var(--photo-gold);">OCTOBER 16, 2026 • 11:40 AM</span>
+    <span style="color: var(--photo-red);">OCTOBER 16, 2026 • 11:40 AM</span>
   </div>
 </div>
 

@@ -6,7 +6,7 @@ header-dark: true
 header-light: false
 sticky-footer: true
 theme-mode: dark
-accent-color: '#e2b340'
+accent-color: '#ef4444'
 blog-page: '/blog'
 fontawesome:
   enabled: true

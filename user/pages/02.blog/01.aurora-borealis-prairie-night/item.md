@@ -12,7 +12,7 @@ header_image: prairie-aurora.jpg
   <img src="prairie-aurora.jpg" alt="Aurora Borealis over Prairie Grain Elevator by Tyler Ziegler">
   <div class="photo-feature-caption">
     <span>FIG 01 // Northern Lights (Aurora Borealis) at 50.1° N, Western Manitoba</span>
-    <span style="color: var(--photo-gold);">OCTOBER 24, 2026 • 02:14 AM</span>
+    <span style="color: var(--photo-red);">OCTOBER 24, 2026 • 02:14 AM</span>
   </div>
 </div>
 

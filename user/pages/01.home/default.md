@@ -20,7 +20,7 @@ metadata:
 </div>
 
 <div style="text-align: center; max-width: 70ch; margin: 3rem auto 2.5rem auto;">
-  <span style="font-family: var(--photo-font-mono); font-size: 0.75rem; letter-spacing: 0.15em; color: var(--photo-gold); text-transform: uppercase;">ARTIST STATEMENT</span>
+  <span style="font-family: var(--photo-font-mono); font-size: 0.75rem; letter-spacing: 0.15em; color: var(--photo-red); text-transform: uppercase;">ARTIST STATEMENT</span>
   <h2 style="font-size: 2rem; font-weight: 800; margin: 0.5rem 0 1rem 0;">A Patient Eye for Fleeting Light</h2>
   <p style="font-size: 1.1rem; color: var(--photo-text-secondary); line-height: 1.7;">
     Photography is an act of deliberate observation. Whether standing in deep prairie snow at 2:00 AM waiting for the solar wind to ignite the upper atmosphere, or framing the mechanical interplay of sunlight across century-old brickwork, these journals document the quiet poetry found when the noise of the world recedes.
@@ -31,10 +31,10 @@ metadata:
 
 <div style="display: flex; align-items: baseline; justify-content: space-between; margin-top: 3rem; border-bottom: 1px solid var(--photo-border); padding-bottom: 0.75rem;">
   <div>
-    <span style="font-family: var(--photo-font-mono); font-size: 0.75rem; color: var(--photo-gold); text-transform: uppercase;">RECENT DISPATCHES</span>
+    <span style="font-family: var(--photo-font-mono); font-size: 0.75rem; color: var(--photo-red); text-transform: uppercase;">RECENT DISPATCHES</span>
     <h2 style="font-size: 1.6rem; font-weight: 700; margin-top: 0.25rem;">Latest Photography Journals</h2>
   </div>
-  <a href="/blog" style="font-family: var(--photo-font-mono); font-size: 0.85rem; color: var(--photo-gold);">Browse All Chronicles →</a>
+  <a href="/blog" style="font-family: var(--photo-font-mono); font-size: 0.85rem; color: var(--photo-red);">Browse All Chronicles →</a>
 </div>
 
 <div class="photo-gallery-grid">

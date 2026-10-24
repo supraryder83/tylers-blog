@@ -1,47 +1,104 @@
 /* ==========================================================================
-   Tyler Ziegler // Photography Blog Custom Styling
-   Refined, Gallery-First Dark Aesthetic
+   Tyler Ziegler's Blog // Dark Black & Red Accent Styling
+   Ultra-Dark Gallery Aesthetic with Crimson Red Accents
    ========================================================================== */
 
 :root {
-  --photo-bg-deep: #0a0c10;
-  --photo-bg-card: #12161f;
-  --photo-bg-elevated: #1a202c;
+  /* Pitch Black & Charcoal Surfaces */
+  --photo-bg-deep: #050508;
+  --photo-bg-card: #0b0c12;
+  --photo-bg-elevated: #12141c;
   --photo-border: rgba(255, 255, 255, 0.08);
-  --photo-border-focus: #e2b340;
-  --photo-gold: #e2b340;
-  --photo-gold-dim: rgba(226, 179, 64, 0.12);
+  
+  /* Bold Red Accents */
+  --photo-red: #ef4444;
+  --photo-red-bright: #ff2a4b;
+  --photo-red-dim: rgba(239, 68, 68, 0.12);
+  --photo-red-border: rgba(239, 68, 68, 0.35);
+  --photo-red-glow: 0 0 16px rgba(239, 68, 68, 0.35);
+
+  /* Typography */
   --photo-text-primary: #f8fafc;
   --photo-text-secondary: #94a3b8;
   --photo-text-muted: #64748b;
   --photo-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --photo-font-mono: 'JetBrains Mono', monospace;
+  --photo-font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, monospace;
 }
 
-body {
+/* Base Body & Reset */
+html, body {
   background-color: var(--photo-bg-deep) !important;
   color: var(--photo-text-primary) !important;
   font-family: var(--photo-font-sans);
   letter-spacing: -0.01em;
 }
 
-/* Header & Nav */
+#page-wrapper, #start, #body-wrapper, .section, main {
+  background-color: var(--photo-bg-deep) !important;
+  color: var(--photo-text-primary) !important;
+}
+
+a {
+  color: var(--photo-red);
+  text-decoration: none;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+a:hover {
+  color: var(--photo-red-bright);
+  text-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+}
+
+/* ==========================================================================
+   1. Brand Logo & Header
+   ========================================================================== */
 #header {
-  background: rgba(10, 12, 16, 0.92) !important;
-  backdrop-filter: blur(12px);
+  background: rgba(5, 5, 8, 0.95) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--photo-border);
 }
 
-.navbar .logo a {
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: #fff !important;
-  font-size: 1.05rem;
+.site-brand-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none !important;
+  padding: 0.35rem 0;
 }
 
+.brand-red-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--photo-red);
+  box-shadow: 0 0 10px var(--photo-red);
+  animation: pulse-red-dot 2.5s infinite ease-in-out;
+  display: inline-block;
+}
+
+@keyframes pulse-red-dot {
+  0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 10px var(--photo-red); }
+  50% { opacity: 0.7; transform: scale(0.9); box-shadow: 0 0 4px var(--photo-red); }
+}
+
+.brand-title {
+  font-family: var(--photo-font-sans);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff !important;
+  transition: color 0.2s ease;
+}
+
+.site-brand-text:hover .brand-title {
+  color: var(--photo-red) !important;
+}
+
+/* Nav Links */
 .navbar .dropmenu ul li a {
   font-size: 0.88rem;
+  font-weight: 500;
   letter-spacing: 0.02em;
   color: var(--photo-text-secondary) !important;
   transition: color 0.2s ease;
@@ -49,17 +106,20 @@ body {
 
 .navbar .dropmenu ul li a:hover,
 .navbar .dropmenu ul li.active a {
-  color: var(--photo-gold) !important;
+  color: var(--photo-red) !important;
 }
 
-/* Photography Hero Banner */
+/* ==========================================================================
+   2. Photography Hero Banner
+   ========================================================================== */
 .photo-hero-banner {
   position: relative;
   border-radius: 12px;
   overflow: hidden;
   margin: 1.5rem 0 3rem 0;
   border: 1px solid var(--photo-border);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7);
+  background: #000;
 }
 
 .photo-hero-banner img {
@@ -74,8 +134,8 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(10, 12, 16, 0.95) 0%, rgba(10, 12, 16, 0.4) 60%, transparent 100%);
-  padding: 3rem 2rem 2rem 2rem;
+  background: linear-gradient(to top, rgba(5, 5, 8, 0.98) 0%, rgba(5, 5, 8, 0.65) 50%, transparent 100%);
+  padding: 3.5rem 2.25rem 2rem 2.25rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -87,43 +147,50 @@ body {
   gap: 0.5rem;
   font-family: var(--photo-font-mono);
   font-size: 0.75rem;
-  color: var(--photo-gold);
+  font-weight: 600;
+  color: var(--photo-red);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
 }
 
 .photo-hero-title {
-  font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+  font-size: clamp(1.8rem, 3.8vw, 2.85rem);
   font-weight: 800;
   color: #fff;
   line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 .photo-hero-desc {
   font-size: 1.05rem;
   color: var(--photo-text-secondary);
   max-width: 65ch;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-/* EXIF Technical Data Card */
+/* ==========================================================================
+   3. EXIF Technical Data Card (Black & Red)
+   ========================================================================== */
 .exif-card {
   background: var(--photo-bg-card);
   border: 1px solid var(--photo-border);
+  border-left: 3px solid var(--photo-red);
   border-radius: 8px;
   padding: 1.25rem;
   margin: 1.75rem 0;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.85rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .exif-header {
   font-family: var(--photo-font-mono);
-  font-size: 0.75rem;
-  color: var(--photo-gold);
+  font-size: 0.74rem;
+  color: var(--photo-red);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -133,7 +200,7 @@ body {
 
 .exif-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
   gap: 0.85rem;
 }
 
@@ -148,6 +215,7 @@ body {
   font-size: 0.68rem;
   color: var(--photo-text-muted);
   text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .exif-value {
@@ -157,7 +225,9 @@ body {
   font-weight: 600;
 }
 
-/* Photography Grid Cards */
+/* ==========================================================================
+   4. Photo Gallery Grid & Cards (Black & Red)
+   ========================================================================== */
 .photo-gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
@@ -178,8 +248,8 @@ body {
 
 .photo-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(226, 179, 64, 0.4);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+  border-color: var(--photo-red-border);
+  box-shadow: 0 12px 32px rgba(239, 68, 68, 0.18), 0 8px 24px rgba(0, 0, 0, 0.6);
 }
 
 .photo-card-img-wrap {
@@ -205,14 +275,16 @@ body {
   position: absolute;
   top: 0.75rem;
   left: 0.75rem;
-  background: rgba(10, 12, 16, 0.85);
+  background: rgba(5, 5, 8, 0.88);
   backdrop-filter: blur(8px);
-  border: 1px solid var(--photo-border);
+  border: 1px solid var(--photo-red-border);
   padding: 0.2rem 0.55rem;
   border-radius: 4px;
   font-family: var(--photo-font-mono);
   font-size: 0.7rem;
-  color: var(--photo-gold);
+  font-weight: 600;
+  color: var(--photo-red);
+  text-transform: uppercase;
 }
 
 .photo-card-body {
@@ -257,17 +329,23 @@ body {
 }
 
 .photo-card-readmore {
-  color: var(--photo-gold);
+  color: var(--photo-red);
   font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
-/* Full-bleed Photography Figures */
+/* ==========================================================================
+   5. Full-Bleed Photo Figures
+   ========================================================================== */
 .photo-feature-figure {
   margin: 2.5rem 0;
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid var(--photo-border);
   background: var(--photo-bg-card);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
 }
 
 .photo-feature-figure img {
@@ -284,27 +362,89 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: var(--photo-bg-elevated);
 }
 
-/* Footer */
+/* Blockquotes */
+blockquote {
+  border-left: 3px solid var(--photo-red) !important;
+  background: var(--photo-bg-card) !important;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  color: var(--photo-text-secondary) !important;
+  border-radius: 0 6px 6px 0;
+}
+
+/* Quark2 Blog Grid Card overrides */
+.blog-listing .card {
+  background: var(--photo-bg-card) !important;
+  border: 1px solid var(--photo-border) !important;
+  border-radius: 10px !important;
+}
+
+.blog-listing .card:hover {
+  border-color: var(--photo-red-border) !important;
+  box-shadow: 0 10px 28px rgba(239, 68, 68, 0.15) !important;
+}
+
+.blog-listing .card .card-header .card-title a {
+  color: #fff !important;
+}
+
+.blog-listing .card .card-header .card-title a:hover {
+  color: var(--photo-red) !important;
+}
+
+/* ==========================================================================
+   6. Footer (Pitch Black & Red Accents)
+   ========================================================================== */
 #footer {
-  background: #07080b !important;
+  background: #020204 !important;
   border-top: 1px solid var(--photo-border);
   padding: 2.5rem 0 1.5rem 0;
   color: var(--photo-text-muted);
   font-size: 0.85rem;
 }
 
-#footer a {
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copy {
+  margin: 0;
+}
+
+.footer-links {
+  margin: 0;
+}
+
+.footer-links a {
   color: var(--photo-text-secondary);
 }
 
-#footer a:hover {
-  color: var(--photo-gold);
+.footer-links a:hover {
+  color: var(--photo-red);
+}
+
+.footer-admin-link {
+  color: var(--photo-red) !important;
+  font-family: var(--photo-font-mono);
+  font-size: 0.8rem;
+  padding: 0.15rem 0.45rem;
+  border: 1px solid var(--photo-red-border);
+  border-radius: 4px;
 }
 
 @media (max-width: 768px) {
   .photo-gallery-grid {
     grid-template-columns: 1fr;
+  }
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
   }
 }
