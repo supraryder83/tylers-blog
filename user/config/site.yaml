@@ -3,19 +3,19 @@ default_lang: en
 author:
   name: 'Tyler Ziegler'
   email: 'tyler@tylerziegler.ca'
-  role: 'Landscape, Analog & Architectural Photographer'
+  role: 'Machinist, Laser Fabricator & Hardware Maker'
   location: 'Western Manitoba, Canada'
 taxonomies: [category, tag]
 metadata:
-  description: 'Personal photography chronicles, analog film craft, prairie auroras, and architectural light from Western Manitoba.'
-  keywords: 'Tyler Ziegler, photography, photoblog, Manitoba, landscape, analog, Leica, rangefinder, aurora'
+  description: 'Build logs, CNC feeds & speeds, CO2 and fiber laser optics, custom hardware fabrication, and workshop tooling by Tyler Ziegler.'
+  keywords: 'Tyler Ziegler, CNC, CNC milling, laser cutter, fiber laser, maker, 3D printing, fabrication, machining, G-code, Voron, workshop'
 summary:
   enabled: true
   format: short
   size: 300
 header:
   title: "Tyler Ziegler's Blog"
-  tagline: 'Photography & Visual Journals'
+  tagline: 'CNC Machining • Fiber & CO2 Lasers • Precision Maker Lab'
 blog:
   route: '/blog'
 social:

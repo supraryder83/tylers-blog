@@ -1,29 +1,29 @@
 ---
-title: 'Portfolio & Journals'
+title: 'CNC, Lasers & Maker Engineering'
 menu: 'Home'
 metadata:
-  description: 'Tyler Ziegler — Fine-Art Landscape, Nocturne & Architectural Photography based in Western Manitoba.'
+  description: 'Tyler Ziegler — CNC Machining, Industrial Laser Fabrication, 3D Printing & Workshop Engineering based in Western Manitoba.'
 ---
 
 <div class="photo-hero-banner">
-  <img src="/user/pages/images/prairie-aurora.jpg" alt="Aurora Borealis over Prairie Grain Elevator by Tyler Ziegler">
+  <img src="/user/pages/images/cnc-milling-aluminum.jpg" alt="CNC Milling Aluminum Billet in Tyler Ziegler's Workshop">
   <div class="photo-hero-overlay">
     <div class="photo-hero-badge">
-      <span>★ FEATURED SERIES // PRAIRIE NOCTURNES</span>
+      <span>★ FEATURED SHOP DISPATCH // CNC & OPTICS</span>
     </div>
-    <h1 class="photo-hero-title">LIGHT, SILENCE, & THE PRAIRIE HORIZON.</h1>
+    <h1 class="photo-hero-title">CHIPS, PHOTONS & PRECISION CODE.</h1>
     <p class="photo-hero-desc">
-      Fine-art landscape, analog rangefinder craft, and dark-sky chronicles by <strong>Tyler Ziegler</strong>. 
-      Capturing the stark geometry, biting sub-zero nights, and fleeting atmospheric beauty of Western Manitoba.
+      CNC machining, high-power laser fabrication, and hardware prototyping by <strong>Tyler Ziegler</strong>. 
+      Bridging digital CAD/CAM geometry, toolpath kinematics, optical beam physics, and functional mechanical builds.
     </p>
   </div>
 </div>
 
-<div style="text-align: center; max-width: 70ch; margin: 3rem auto 2.5rem auto;">
-  <span style="font-family: var(--photo-font-mono); font-size: 0.75rem; letter-spacing: 0.15em; color: var(--photo-red); text-transform: uppercase;">ARTIST STATEMENT</span>
-  <h2 style="font-size: 2rem; font-weight: 800; margin: 0.5rem 0 1rem 0;">A Patient Eye for Fleeting Light</h2>
+<div style="text-align: center; max-width: 75ch; margin: 3rem auto 2.5rem auto;">
+  <span style="font-family: var(--photo-font-mono); font-size: 0.75rem; letter-spacing: 0.15em; color: var(--photo-red); text-transform: uppercase;">MAKER MANIFESTO</span>
+  <h2 style="font-size: 2rem; font-weight: 800; margin: 0.5rem 0 1rem 0;">From Digital Vector to Physical Substance</h2>
   <p style="font-size: 1.1rem; color: var(--photo-text-secondary); line-height: 1.7;">
-    Photography is an act of deliberate observation. Whether standing in deep prairie snow at 2:00 AM waiting for the solar wind to ignite the upper atmosphere, or framing the mechanical interplay of sunlight across century-old brickwork, these journals document the quiet poetry found when the noise of the world recedes.
+    Building real things requires respecting the physical properties of matter. Whether calculating radial chip thinning on a 6061-T6 aluminum pocket, focusing a 10.6µm CO2 beam through ZnSe meniscus optics, or tuning a 50W MOPA fiber laser for sub-micron titanium color annealing, this blog documents the rigorous testing, build logs, and tooling formulas behind custom maker engineering.
   </p>
 </div>
 
@@ -31,86 +31,86 @@ metadata:
 
 <div style="display: flex; align-items: baseline; justify-content: space-between; margin-top: 3rem; border-bottom: 1px solid var(--photo-border); padding-bottom: 0.75rem;">
   <div>
-    <span style="font-family: var(--photo-font-mono); font-size: 0.75rem; color: var(--photo-red); text-transform: uppercase;">RECENT DISPATCHES</span>
-    <h2 style="font-size: 1.6rem; font-weight: 700; margin-top: 0.25rem;">Latest Photography Journals</h2>
+    <span style="font-family: var(--photo-font-mono); font-size: 0.75rem; color: var(--photo-red); text-transform: uppercase;">LATEST WORKSHOP LOGS</span>
+    <h2 style="font-size: 1.6rem; font-weight: 700; margin-top: 0.25rem;">Recent Fabrication Builds</h2>
   </div>
-  <a href="/blog" style="font-family: var(--photo-font-mono); font-size: 0.85rem; color: var(--photo-red);">Browse All Chronicles →</a>
+  <a href="/blog" style="font-family: var(--photo-font-mono); font-size: 0.85rem; color: var(--photo-red);">Browse All Build Logs →</a>
 </div>
 
 <div class="photo-gallery-grid">
 
-  <!-- Card 1: Aurora -->
-  <a href="/blog/aurora-borealis-prairie-night" class="photo-card">
+  <!-- Card 1: CNC Milling -->
+  <a href="/blog/milling-6061-aluminum-feeds-speeds" class="photo-card">
     <div class="photo-card-img-wrap">
-      <img src="/user/pages/images/prairie-aurora.jpg" alt="Aurora Borealis" class="photo-card-img" loading="lazy">
-      <span class="photo-card-badge">LANDSCAPE // NOCTURNE</span>
+      <img src="/user/pages/images/cnc-milling-aluminum.jpg" alt="CNC Milling Aluminum" class="photo-card-img" loading="lazy">
+      <span class="photo-card-badge">CNC // MACHINING</span>
     </div>
     <div class="photo-card-body">
-      <div class="photo-card-date">OCTOBER 24, 2026 • WESTERN MANITOBA</div>
-      <h3 class="photo-card-title">Curtains of Emerald: Tracking G4 Aurora Over a Prairie Sentinel</h3>
+      <div class="photo-card-date">OCTOBER 24, 2026 • WORKSHOP LAB</div>
+      <h3 class="photo-card-title">Milling 6061-T6 Aluminum: Dialing in Chip Load, MRR, and Air-Blast Lubrication</h3>
       <p class="photo-card-excerpt">
-        Sub-zero frost, an 8-second exposure, and the geomagnetic storm that set the northern sky ablaze above a 1920s grain elevator.
+        Single-flute DLC carbide endmills, trochoidal adaptive clearing in Fusion 360, and avoiding chip re-welding on heavy cuts.
       </p>
       <div class="photo-card-footer">
-        <span>21mm • f/1.4 • 8s • ISO 1600</span>
-        <span class="photo-card-readmore">View Entry →</span>
+        <span>18,000 RPM • 2200 mm/min • 1/4" DLC</span>
+        <span class="photo-card-readmore">View Log →</span>
       </div>
     </div>
   </a>
 
-  <!-- Card 2: Rangefinder -->
-  <a href="/blog/mechanics-of-analog-rangefinders" class="photo-card">
+  <!-- Card 2: Rotary Fiber Laser -->
+  <a href="/blog/fiber-laser-deep-engraving-rotary" class="photo-card">
     <div class="photo-card-img-wrap">
-      <img src="/user/pages/images/rangefinder-gear.jpg" alt="Analog Rangefinder on Slate" class="photo-card-img" loading="lazy">
-      <span class="photo-card-badge">ANALOG // CRAFT</span>
+      <img src="/user/pages/images/laser-rotary-engraving.jpg" alt="Fiber Laser Rotary Engraving" class="photo-card-img" loading="lazy">
+      <span class="photo-card-badge">LASER // ROTARY</span>
     </div>
     <div class="photo-card-body">
-      <div class="photo-card-date">OCTOBER 22, 2026 • BENCH LAB</div>
-      <h3 class="photo-card-title">The Tactile Discipline of Manual Rangefinders & 120 Film</h3>
+      <div class="photo-card-date">OCTOBER 22, 2026 • OPTICS BENCH</div>
+      <h3 class="photo-card-title">Deep Engraving & Color Annealing with a 50W MOPA Fiber Laser & Rotary Chuck</h3>
       <p class="photo-card-excerpt">
-        Examining the optical mechanics of split-image focus, brass shutter click feel, and the irreversible commitment of gelatin silver emulsion.
+        Pulse duration modulation from 2ns to 200ns, split-step rotary synchronization, and oxide color spectrum tuning on titanium.
       </p>
       <div class="photo-card-footer">
-        <span>50mm • f/2.0 • 1/125s • ISO 100</span>
-        <span class="photo-card-readmore">View Entry →</span>
+        <span>50W MOPA • 60ns • 45kHz • 25µm Spot</span>
+        <span class="photo-card-readmore">View Log →</span>
       </div>
     </div>
   </a>
 
-  <!-- Card 3: Riding Mountain Mist -->
-  <a href="/blog/morning-mist-riding-mountain" class="photo-card">
+  <!-- Card 3: CO2 Laser Cutting -->
+  <a href="/blog/co2-laser-cutting-optics-kerf" class="photo-card">
     <div class="photo-card-img-wrap">
-      <img src="/user/pages/images/riding-mountain-mist.jpg" alt="Misty Forest Lake" class="photo-card-img" loading="lazy">
-      <span class="photo-card-badge">LANDSCAPE // BOREAL</span>
+      <img src="/user/pages/images/laser-cutting-metal.jpg" alt="CO2 Laser Cutting Sheet" class="photo-card-img" loading="lazy">
+      <span class="photo-card-badge">LASER // CO2 OPTICS</span>
     </div>
     <div class="photo-card-body">
-      <div class="photo-card-date">OCTOBER 19, 2026 • RIDING MOUNTAIN</div>
-      <h3 class="photo-card-title">Silence on Mirror Water: Dawn Fog Across the Tamarack Shoreline</h3>
+      <div class="photo-card-date">OCTOBER 18, 2026 • CUTTING BED</div>
+      <h3 class="photo-card-title">Edge-Finish Mastery: Cutting 10mm Cast Acrylic & Sheet on a 130W CO2 Laser</h3>
       <p class="photo-card-excerpt">
-        Paddling out onto the glassy waters at first light. Sunbeams cutting through the boreal mist as golden tamaracks announce late autumn.
+        3-mirror beam alignment protocols, ZnSe meniscus focal length trade-offs, and micro air assist for flame-polished acrylic walls.
       </p>
       <div class="photo-card-footer">
-        <span>45mm • f/8.0 • 1/60s • ISO 200</span>
-        <span class="photo-card-readmore">View Entry →</span>
+        <span>130W Reci • 10.6µm • 2.5" ZnSe • DOF 5.5mm</span>
+        <span class="photo-card-readmore">View Log →</span>
       </div>
     </div>
   </a>
 
-  <!-- Card 4: Monochrome Architecture -->
-  <a href="/blog/monochrome-shadows-historic-warehouse" class="photo-card">
+  <!-- Card 4: 3D Printing & Jigs -->
+  <a href="/blog/corexy-carbon-fiber-nylon-jigs" class="photo-card">
     <div class="photo-card-img-wrap">
-      <img src="/user/pages/images/monochrome-geometry.jpg" alt="Monochrome Industrial Warehouse" class="photo-card-img" loading="lazy">
-      <span class="photo-card-badge">MONOCHROME // STREET</span>
+      <img src="/user/pages/images/maker-workshop-bench.jpg" alt="CoreXY 3D Printing Workbench" class="photo-card-img" loading="lazy">
+      <span class="photo-card-badge">MAKER // 3D PRINTING</span>
     </div>
     <div class="photo-card-body">
-      <div class="photo-card-date">OCTOBER 16, 2026 • BRANDON HERITAGE</div>
-      <h3 class="photo-card-title">Diagonal Shadows & Iron Escapes: The Geometry of Heritage Brick</h3>
+      <div class="photo-card-date">OCTOBER 15, 2026 • PROTOTYPE LAB</div>
+      <h3 class="photo-card-title">Building Custom CNC Soft Jigs with PA-CF on an Enclosed High-Temp CoreXY</h3>
       <p class="photo-card-excerpt">
-        High-contrast monochrome studies of industrial raking light, fire escape staircases, and 120-year-old masonry textures.
+        Printing carbon-fiber nylon vise soft jaws: oven crystallization annealing, 6-wall gyroid infill, and moisture conditioning.
       </p>
       <div class="photo-card-footer">
-        <span>35mm • f/5.6 • 1/500s • ISO 320</span>
-        <span class="photo-card-readmore">View Entry →</span>
+        <span>Voron 2.4 • PA6-CF • 295°C / 110°C / 58°C</span>
+        <span class="photo-card-readmore">View Log →</span>
       </div>
     </div>
   </a>
@@ -119,29 +119,29 @@ metadata:
 
 <div class="exif-card" style="margin-top: 3rem;">
   <div class="exif-header">
-    <span>★ PRIMARY OPTICAL LOADOUT</span>
-    <span>FIELD KIT 2026</span>
+    <span>★ WORKSHOP MACHINE INVENTORY</span>
+    <span>ACTIVE FABRICATION CAPABILITIES</span>
   </div>
   <div class="exif-grid">
     <div class="exif-item">
-      <span class="exif-label">PRIMARY BODY</span>
-      <span class="exif-value">Leica M10-R (40.89 MP)</span>
+      <span class="exif-label">CNC MILL / ROUTER</span>
+      <span class="exif-value">Heavy Gantry Mill (2.2kW Spindle, 24,000 RPM, Closed-Loop Steppers)</span>
     </div>
     <div class="exif-item">
-      <span class="exif-label">MEDIUM FORMAT</span>
-      <span class="exif-value">Fujifilm GFX 100S</span>
+      <span class="exif-label">FIBER LASER</span>
+      <span class="exif-value">50W JPT M7 MOPA (Galvo + Rotolase 360 4th Axis)</span>
     </div>
     <div class="exif-item">
-      <span class="exif-label">FAVORITE PRIME</span>
-      <span class="exif-value">Summilux-M 50mm f/1.4</span>
+      <span class="exif-label">CO2 LASER</span>
+      <span class="exif-value">130W Reci W6 Tube (1300x900mm Bed, Chilled CW-5200)</span>
     </div>
     <div class="exif-item">
-      <span class="exif-label">WIDE NOCTURNE</span>
-      <span class="exif-value">Voigtländer 21mm f/1.4</span>
+      <span class="exif-label">ADDITIVE / 3D PRINTING</span>
+      <span class="exif-value">Enclosed Voron 2.4 CoreXY 350mm³ (PA-CF / PETG / TPU)</span>
     </div>
     <div class="exif-item">
-      <span class="exif-label">FAVORITE FILM</span>
-      <span class="exif-value">Kodak Tri-X 400 (D-76)</span>
+      <span class="exif-label">CAM & CONTROL SOFTWARE</span>
+      <span class="exif-value">Autodesk Fusion 360, LightBurn DSP, Klipper / LinuxCNC</span>
     </div>
   </div>
 </div>

@@ -439,6 +439,72 @@ blockquote {
   border-radius: 4px;
 }
 
+/* ==========================================================================
+   7. Tables & Code Blocks (Dark Workshop Theme)
+   ========================================================================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.75rem 0;
+  background: var(--photo-bg-card);
+  border: 1px solid var(--photo-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table th {
+  background: var(--photo-bg-elevated);
+  color: var(--photo-red);
+  font-family: var(--photo-font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.85rem 1rem;
+  border-bottom: 2px solid var(--photo-red-border);
+  text-align: left;
+}
+
+table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--photo-border);
+  color: var(--photo-text-primary);
+  font-size: 0.92rem;
+}
+
+table tr:hover td {
+  background: rgba(239, 68, 68, 0.04);
+}
+
+pre, code {
+  font-family: var(--photo-font-mono) !important;
+}
+
+pre {
+  background: #08090e !important;
+  border: 1px solid var(--photo-border) !important;
+  border-left: 3px solid var(--photo-red) !important;
+  border-radius: 6px;
+  padding: 1.15rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+code {
+  color: #ff546d !important;
+  background: rgba(239, 68, 68, 0.08);
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.88em;
+}
+
+pre code {
+  color: #e2e8f0 !important;
+  background: transparent !important;
+  padding: 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
 @media (max-width: 768px) {
   .photo-gallery-grid {
     grid-template-columns: 1fr;

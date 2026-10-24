@@ -1,6 +1,6 @@
 ---
-title: 'Photoblog'
-menu: 'Journals'
+title: 'Build Logs & Engineering Notes'
+menu: 'Build Logs'
 content:
   items: '@self.children'
   order:
@@ -10,14 +10,14 @@ content:
   pagination: true
 pagination: true
 feed:
-  description: 'Tyler Ziegler Photography Journals & Field Dispatches'
+  description: 'CNC Machining, Industrial Laser Fabrication, and Maker Build Logs by Tyler Ziegler'
   limit: 10
 taxonomy:
-  category: [photography, blog]
+  category: [maker, cnc, lasers]
 ---
 
-# Photography Journals & Field Dispatches
+# Build Logs & Engineering Notes
 
-Documenting night skies, optical mechanics, boreal landscapes, and architecture from Western Manitoba.
+Detailed teardowns, feeds & speeds formulas, G-code post-processor tuning, fiber laser annealing, and custom hardware fabrication projects.
 
 ---
