@@ -1,0 +1,28 @@
+# Grav cache, backups, logs, and temporary files
+/assets/*
+!/assets/.gitkeep
+/backup/*
+!/backup/.gitkeep
+/cache/*
+!/cache/.gitkeep
+/images/*
+!/images/.gitkeep
+/logs/*
+!/logs/.gitkeep
+/tmp/*
+!/tmp/.gitkeep
+
+# Environment files
+.env
+.env.local
+*.log
+*.tmp
+*.bak
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/

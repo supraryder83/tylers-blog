@@ -1,0 +1,13 @@
+enabled: true
+header-fixed: true
+header-animated: true
+header-transparent: false
+header-dark: true
+header-light: false
+sticky-footer: true
+theme-mode: dark
+accent-color: '#e2b340'
+blog-page: '/blog'
+fontawesome:
+  enabled: true
+  local: false

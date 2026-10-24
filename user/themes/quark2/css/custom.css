@@ -1,0 +1,310 @@
+/* ==========================================================================
+   Tyler Ziegler // Photography Blog Custom Styling
+   Refined, Gallery-First Dark Aesthetic
+   ========================================================================== */
+
+:root {
+  --photo-bg-deep: #0a0c10;
+  --photo-bg-card: #12161f;
+  --photo-bg-elevated: #1a202c;
+  --photo-border: rgba(255, 255, 255, 0.08);
+  --photo-border-focus: #e2b340;
+  --photo-gold: #e2b340;
+  --photo-gold-dim: rgba(226, 179, 64, 0.12);
+  --photo-text-primary: #f8fafc;
+  --photo-text-secondary: #94a3b8;
+  --photo-text-muted: #64748b;
+  --photo-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --photo-font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  background-color: var(--photo-bg-deep) !important;
+  color: var(--photo-text-primary) !important;
+  font-family: var(--photo-font-sans);
+  letter-spacing: -0.01em;
+}
+
+/* Header & Nav */
+#header {
+  background: rgba(10, 12, 16, 0.92) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--photo-border);
+}
+
+.navbar .logo a {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #fff !important;
+  font-size: 1.05rem;
+}
+
+.navbar .dropmenu ul li a {
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+  color: var(--photo-text-secondary) !important;
+  transition: color 0.2s ease;
+}
+
+.navbar .dropmenu ul li a:hover,
+.navbar .dropmenu ul li.active a {
+  color: var(--photo-gold) !important;
+}
+
+/* Photography Hero Banner */
+.photo-hero-banner {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 1.5rem 0 3rem 0;
+  border: 1px solid var(--photo-border);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.photo-hero-banner img {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-hero-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(10, 12, 16, 0.95) 0%, rgba(10, 12, 16, 0.4) 60%, transparent 100%);
+  padding: 3rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.photo-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--photo-font-mono);
+  font-size: 0.75rem;
+  color: var(--photo-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.photo-hero-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+}
+
+.photo-hero-desc {
+  font-size: 1.05rem;
+  color: var(--photo-text-secondary);
+  max-width: 65ch;
+  line-height: 1.5;
+}
+
+/* EXIF Technical Data Card */
+.exif-card {
+  background: var(--photo-bg-card);
+  border: 1px solid var(--photo-border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin: 1.75rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.exif-header {
+  font-family: var(--photo-font-mono);
+  font-size: 0.75rem;
+  color: var(--photo-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--photo-border);
+  padding-bottom: 0.5rem;
+}
+
+.exif-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.85rem;
+}
+
+.exif-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.exif-label {
+  font-family: var(--photo-font-mono);
+  font-size: 0.68rem;
+  color: var(--photo-text-muted);
+  text-transform: uppercase;
+}
+
+.exif-value {
+  font-family: var(--photo-font-mono);
+  font-size: 0.88rem;
+  color: var(--photo-text-primary);
+  font-weight: 600;
+}
+
+/* Photography Grid Cards */
+.photo-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 1.75rem;
+  margin: 2rem 0;
+}
+
+.photo-card {
+  background: var(--photo-bg-card);
+  border: 1px solid var(--photo-border);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none !important;
+}
+
+.photo-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(226, 179, 64, 0.4);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+
+.photo-card-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #000;
+}
+
+.photo-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.photo-card:hover .photo-card-img {
+  transform: scale(1.04);
+}
+
+.photo-card-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background: rgba(10, 12, 16, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--photo-border);
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  font-family: var(--photo-font-mono);
+  font-size: 0.7rem;
+  color: var(--photo-gold);
+}
+
+.photo-card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.photo-card-date {
+  font-family: var(--photo-font-mono);
+  font-size: 0.72rem;
+  color: var(--photo-text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.photo-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--photo-text-primary);
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.photo-card-excerpt {
+  font-size: 0.9rem;
+  color: var(--photo-text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.photo-card-footer {
+  margin-top: auto;
+  border-top: 1px solid var(--photo-border);
+  padding-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--photo-font-mono);
+  font-size: 0.75rem;
+  color: var(--photo-text-muted);
+}
+
+.photo-card-readmore {
+  color: var(--photo-gold);
+  font-weight: 600;
+}
+
+/* Full-bleed Photography Figures */
+.photo-feature-figure {
+  margin: 2.5rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--photo-border);
+  background: var(--photo-bg-card);
+}
+
+.photo-feature-figure img {
+  width: 100%;
+  display: block;
+}
+
+.photo-feature-caption {
+  padding: 0.75rem 1.25rem;
+  font-family: var(--photo-font-mono);
+  font-size: 0.78rem;
+  color: var(--photo-text-muted);
+  border-top: 1px solid var(--photo-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Footer */
+#footer {
+  background: #07080b !important;
+  border-top: 1px solid var(--photo-border);
+  padding: 2.5rem 0 1.5rem 0;
+  color: var(--photo-text-muted);
+  font-size: 0.85rem;
+}
+
+#footer a {
+  color: var(--photo-text-secondary);
+}
+
+#footer a:hover {
+  color: var(--photo-gold);
+}
+
+@media (max-width: 768px) {
+  .photo-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,15 @@
+state: enabled
+email: tyler@tylerziegler.ca
+language: en
+access:
+  admin:
+    login: true
+    super: true
+  api:
+    login: true
+    super: true
+  site:
+    login: true
+fullname: 'Tyler Ziegler'
+title: Administrator
+hashed_password: $2y$12$hM10diA1gB/jVmw.um/rJOQOavnzVwRoTS4QH7b0RI24ODoMQXXWW

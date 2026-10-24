@@ -1,0 +1,129 @@
+<!doctype html>
+<!-- `lang` and `dir` are set on hydration from the user's i18n preference;
+     see the $effect in src/routes/+layout.svelte. -->
+<html data-theme="grav">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="data:," />
+		<!-- All fonts are self-hosted; no external requests. Google Sans (default) is
+		     declared in layout.css; alternate families are bundled via @fontsource-variable
+		     imports in +layout.svelte. See getgrav/grav-plugin-admin2#97. -->
+		<script>
+			// Recover when a boot chunk fails to load (admin2#181): a host's proxy
+			// rate-limits the burst and answers one file with a 503 or 429. Safari
+			// then keeps that failure and replays it on every normal reload without
+			// asking the server again, so first re-fetch each failed file with
+			// `cache: 'reload'` to replace the stored failure, then reload. Only
+			// before the app has mounted (+layout.svelte sets __GRAV_BOOTED__), so
+			// it never reloads under someone's work, and at most twice per tab. With
+			// no sessionStorage there is no counter, so it never reloads at all.
+			(function () {
+				var KEY = 'grav-admin2-boot-retry';
+				var failed = [];
+				var timer = 0;
+				function note(url) {
+					if (typeof url !== 'string' || url.indexOf('/_app/immutable/') === -1) return;
+					if (failed.indexOf(url) === -1) failed.push(url);
+					clearTimeout(timer);
+					timer = setTimeout(recover, 300);
+				}
+				function refetch(url, tries) {
+					return fetch(url, { cache: 'reload', credentials: 'same-origin' })
+						.then(function (res) { if (!res.ok) throw res.status; })
+						.catch(function () {
+							if (tries <= 1) return;
+							return new Promise(function (r) { setTimeout(r, 1000); }).then(function () {
+								return refetch(url, tries - 1);
+							});
+						});
+				}
+				function recover() {
+					var urls = failed.splice(0);
+					Promise.all(urls.map(function (u) { return refetch(u, 3); })).then(function () {
+						if (window.__GRAV_BOOTED__) return;
+						try {
+							var n = Number(sessionStorage.getItem(KEY)) || 0;
+							if (n >= 2) return;
+							sessionStorage.setItem(KEY, String(n + 1));
+						} catch (e) {
+							return;
+						}
+						location.reload();
+					});
+				}
+				// modulepreload links and module scripts: `error` does not bubble.
+				document.addEventListener('error', function (e) {
+					var t = e.target;
+					if (t && (t.tagName === 'LINK' || t.tagName === 'SCRIPT')) note(t.href || t.src);
+				}, true);
+				// Vite's preload helper; Safari's message carries no URL, the link does.
+				window.addEventListener('vite:preloadError', function (e) {
+					var m = String(e.payload && e.payload.message).match(/https?:\/\/\S+/);
+					if (m) note(m[0]);
+				});
+			})();
+		</script>
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/entry/start.CBta2txg.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/DYclDfOS.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/CYB3jkU8.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/B1SAInzE.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/entry/app.DNRpTKQV.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/PPVm8Dsz.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/nodes/0.DljCr_oc.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/Bf7WyRxY.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/BrsCqP7R.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/B_RK9TnC.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/kQbFRL7L.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/CIhiJzRX.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/F96ItNGo.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/Dt87hRfZ.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/DZ0KBxjc.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/CPBEZQ1M.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/Cf1_YsiI.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/BCEL4wOB.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/CWZ6UFse.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/D1q-g_Bj.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/D9CGC6WI.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/Ci3D6Z43.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/CWd8vXCT.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/BxFCfmCY.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/CNYHJY8m.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/1vO5KeTB.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/DVLyXNXr.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/DqJEy4wR.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/BMDXRf2P.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/uiR3LR9_.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/BDM64gw5.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/DRNU9fkE.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/BJdIsyEb.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/BRfd1WJn.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/DquX2EIl.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/CtRRNpNW.js" rel="modulepreload">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/chunks/A6DKOXrI.js" rel="modulepreload">
+		
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/assets/LoginCaptcha.BTaygdew.css" rel="stylesheet">
+		<link href="/__GRAV_ADMIN2_BASE__/_app/immutable/assets/0.DbUWVhwe.css" rel="stylesheet">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">
+			<script>
+				{
+					__sveltekit_w7nlwf = {
+						base: "/__GRAV_ADMIN2_BASE__",
+						assets: "/__GRAV_ADMIN2_BASE__"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("/__GRAV_ADMIN2_BASE__/_app/immutable/entry/start.CBta2txg.js"),
+						import("/__GRAV_ADMIN2_BASE__/_app/immutable/entry/app.DNRpTKQV.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element);
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
